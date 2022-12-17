@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import { RedocStandalone } from 'redoc';
+
+// import * as swagger from './swagger.json';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RedocStandalone
+  spec={"https://apidocs.antna.co.in/swagger.yaml"}
+  options={{
+    nativeScrollbars: true,
+    theme: { colors: { primary: { main: '#0065fc' } } },
+  }}
+/>
+
     </div>
   );
 }
